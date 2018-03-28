@@ -4,4 +4,6 @@
     <h2>BEER FOR GODS</h2>
   </div>
 </div>
-<app-list-keg></app-list-keg>
+
+<app-list-keg [childKegList]="masterKegList" (clickSender)="editKeg($event)"></app-list-keg>
+<app-edit-keg [childKegToEdit]="kegToEdit"></app-edit-keg>

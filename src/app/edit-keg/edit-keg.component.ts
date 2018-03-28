@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Keg } from '../models/keg.model';
 
 @Component({
   selector: 'app-edit-keg',
@@ -6,10 +7,5 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit-keg.component.css']
 })
 export class EditKegComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  @Input() childKegToEdit: Keg;
 }

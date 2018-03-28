@@ -1,38 +1,19 @@
 <div class="row">
-  <div class="col-lg-5">
-    <div class="card" style="width: 16rem; text-align:center;" *ngFor="let keg of KEGS" (click)="showKeg(keg)">
+  <div class="col-md-6">
+    <div class="card" style="text-align:center;" *ngFor="let keg of childKegList" (click)="showKeg(keg)">
       <h2 style=" font-size:3rem;">
         <span >{{keg.name}}</span>
       </h2>
-      <span class="details">
-        {{keg.brand}}<br>
-        ${{keg.price}}<br>
-        ABV {{keg.abv}}%<br>
-        NO. pints: {{keg.pints}}
-      </span>
     </div>
   </div>
-  <div class="col-lg-7 card" style="width: 16rem; text-align:center;" *ngIf="selectedKeg">
-    <h1>{{selectedKeg.name}} Details</h1>
-    <h3>BRAND: {{selectedKeg.brand}}</h3>
-    <h3>PRICE: ${{selectedKeg.price}}</h3>
-    <h3>ABV: {{selectedKeg.abv}}%</h3>
-    <h3>PINTS LEFT: {{selectedKeg.pints}}</h3>
-    <button (click)="editKeg(keg)">EDIT</button>
-    <div class="card" *ngIf="kegToEdit">
-      <form>
-      <label for="">BEER NAME:</label>
-      <input [(ngModel)]="selectedKeg.name" type="text" name="name">
-      <br>
-      <label for="">BRAND NAME:</label>
-      <input type="text" name="brand" [(ngModel)]="selectedKeg.brand">
-      <br>
-      <label for="">PRICE:</label>
-      <input type="number" name="price" [(ngModel)]="selectedKeg.price">
-      <br>
-      <label for="">ABV:</label>
-      <input type="number" name="abv" [(ngModel)]="selectedKeg.abv">
-      </form>
+  <div class="col-md-6">
+    <div class="card" style="text-align:center;" *ngIf="selectedKeg">
+      <h1>{{selectedKeg.name}} Details</h1>
+      <h3>BRAND: {{selectedKeg.brand}}</h3>
+      <h3>PRICE: ${{selectedKeg.price}}</h3>
+      <h3>ABV: {{selectedKeg.abv}}%</h3>
+      <h3>PINTS LEFT: {{selectedKeg.pints}}</h3>
+      <button (click)="editButtonClicked(selectedKeg)">EDIT</button>
     </div>
-  </div> <!-- col -->
-</div> <!-- row -->
+  </div>
+</div><!-- row -->

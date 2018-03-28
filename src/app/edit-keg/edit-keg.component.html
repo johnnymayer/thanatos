@@ -1,3 +1,16 @@
-<p>
-  edit-keg works!
-</p>
+
+  <div class="card" *ngIf="childKegToEdit">
+    <form>
+    <label for="">BEER NAME:</label>
+    <input [(ngModel)]="childKegToEdit.name" type="text" name="name">
+    <br>
+    <label for="">BRAND NAME:</label>
+    <input type="text" name="brand" [(ngModel)]="childKegToEdit.brand">
+    <br>
+    <label for="">PRICE:</label>
+    <input type="number" name="price" [(ngModel)]="childKegToEdit.price">
+    <br>
+    <label for="">ABV:</label>
+    <input type="number" name="abv" [(ngModel)]="childKegToEdit.abv">
+    </form>
+  </div>
