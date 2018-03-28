@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Keg } from '../models/keg.model';
 
 @Component({
-  selector: 'app-kegs',
-  templateUrl: './kegs.component.html',
-  styleUrls: ['./kegs.component.css']
+  selector: 'app-list-keg',
+  templateUrl: './list-keg.component.html',
+  styleUrls: ['./list-keg.component.css']
 })
-export class KegsComponent implements OnInit {
+export class ListKegComponent {
   KEGS: Keg[] = [
     new Keg('Giantess', 'Thanatos', 200, 6),
     new Keg('Black Butte', 'Deschutes', 200, 7.4),
@@ -15,11 +15,9 @@ export class KegsComponent implements OnInit {
     new Keg('Dad Guy Ale', 'Creepy Eagles', 200, 7.3),
     new Keg('Vortex', 'Fort George', 200, 5.5),
   ]
-
-
-  constructor() { }
-
-  ngOnInit() {
-  }
+  selectedKeg = null;
+  showKeg(clickedKeg) {
+    this.selectedKeg = clickedKeg;
+  };
 
 }
