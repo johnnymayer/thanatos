@@ -20,8 +20,13 @@ export class AppComponent {
     new Keg('Vortex', 'Fort George', 200, 5.5),
   ]
   selectedKeg = null;
+  kegToEdit = null;
   showKeg(clickedKeg) {
     this.selectedKeg = clickedKeg;
+  };
+  editKeg(keg) {
+    this.kegToEdit = keg;  
   }
+
 
 }

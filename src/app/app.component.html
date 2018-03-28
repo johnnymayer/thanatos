@@ -23,14 +23,23 @@
       <h3>PRICE: ${{selectedKeg.price}}</h3>
       <h3>ABV: {{selectedKeg.abv}}%</h3>
       <h3>PINTS LEFT: {{selectedKeg.pints}}</h3>
-      <button (click)="editKeg()">EDIT</button>
-      <div class="card" *ngIf="">
+      <button (click)="editKeg(keg)">EDIT</button>
+      <div class="card" *ngIf="kegToEdit">
         <form>
-        <label for="">Beer name:</label>
-        <input type="text" name="" value="{{keg.name}}">
-        <input type="text" name="" value="{{keg.brand}}">
-        <input type="number" name="" value="{{keg.price}}">
-        <input type="number" name="" value="{{keg.abv}}">
+        <label for="">BEER NAME:</label>
+
+        HERE!!!!!!
+        <input [(ngModel)]="selectedKeg.name" type="text" name="anything">
+
+        <br>
+        <label for="">BRAND NAME:</label>
+        <input type="text" name="" value="{{selectedKeg.brand}}">
+        <br>
+        <label for="">PRICE:</label>
+        <input type="number" name="" value="{{selectedKeg.price}}">
+        <br>
+        <label for="">ABV:</label>
+        <input type="number" name="" value="{{selectedKeg.abv}}">
         </form>
       </div>
     </div> <!-- col -->
