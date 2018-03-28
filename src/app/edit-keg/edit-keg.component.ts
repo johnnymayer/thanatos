@@ -6,6 +6,16 @@ import { Keg } from '../models/keg.model';
   templateUrl: './edit-keg.component.html',
   styleUrls: ['./edit-keg.component.css']
 })
-export class EditKegComponent implements OnInit {
+export class EditKegComponent {
   @Input() childKegToEdit: Keg;
+  @Output() clickedDone = new EventEmitter();
+  @Output() clickedDelete = new EventEmitter();
+
+  finishedEditing() {
+    this.clickedDone.emit();
+  }
+
+  deleteKeg() {
+    this.clickedDelete.emit();
+  }
 }

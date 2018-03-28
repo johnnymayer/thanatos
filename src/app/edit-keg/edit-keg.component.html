@@ -13,4 +13,6 @@
     <label for="">ABV:</label>
     <input type="number" name="abv" [(ngModel)]="childKegToEdit.abv">
     </form>
+    <button (click)="finishedEditing()" class="button">SAVE</button>
+    <button (click)="deleteKeg()" class="button2">DELETE</button>
   </div>

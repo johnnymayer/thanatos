@@ -21,7 +21,17 @@ export class AppComponent {
 
   editKeg(keg) {
     this.kegToEdit = keg;
-  }
+  };
+
+  finishedEditing() {
+    this.kegToEdit = null;
+  };
+
+  deleteKeg() {
+    let index = this.masterKegList.indexOf(this.kegToEdit);
+    this.masterKegList.splice(index, 1);
+    this.kegToEdit = null;
+  };
 
 
 
