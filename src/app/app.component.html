@@ -3,17 +3,19 @@
     <h1>{{title}}</h1>
     <h2>BEER FOR GODS</h2>
   </div>
-</div>
-
-<app-list-keg [childKegList]="masterKegList" (clickSender)="editKeg($event)" (sellPint)='masterSellPint($event)' (sellGrowler)='masterSellGrowler($event)' (sellXlGrowler)='masterSellXlGrowler($event)'
-(sellKegGrowler)='masterSellKegGrowler($event)'></app-list-keg>
-
-<app-edit-keg [childKegToEdit]="kegToEdit" (clickedDone)="finishedEditing()" (clickedDelete) = "deleteKeg()"></app-edit-keg>
-
-<div style='text-align:center;'>
-  <button (click)="addKeg()">ADD</button>
-</div>
-
-<div *ngIf="want">
-  <app-add-keg (clickedAdd)="addNewKegToMaster($event)"></app-add-keg>
+  <div class="row">
+    <div class="col">
+      <app-list-keg [childKegList]="masterKegList" (clickSender)="editKeg($event)" (sellPint)='masterSellPint($event)' (sellGrowler)='masterSellGrowler($event)' (sellXlGrowler)='masterSellXlGrowler($event)'
+      (sellKegGrowler)='masterSellKegGrowler($event)'></app-list-keg>
+      <div style='text-align:center;'>
+        <button (click)="addKeg()">ADD</button>
+      </div>
+    </div>
+    <div class="col">
+      <app-edit-keg [childKegToEdit]="kegToEdit" (clickedDone)="finishedEditing()" (clickedDelete) = "deleteKeg()"></app-edit-keg>
+    </div>
+  </div>
+  <div *ngIf="want">
+    <app-add-keg (clickedAdd)="addNewKegToMaster($event)"></app-add-keg>
+  </div>
 </div>

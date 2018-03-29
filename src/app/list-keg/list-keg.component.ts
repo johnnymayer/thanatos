@@ -43,10 +43,20 @@ export class ListKegComponent {
 
 
   setWidth(input) {
+    let color;
     let percent = Math.round((input / 124) * 100);
+    if(input <= 10) {
+      color = '#D73744';
+    } else if (input > 11 && input <= 62) {
+      color = '#E7B533';
+    } else {
+      color = '#3ED89C';
+    }
     let styles = {
-      'width': percent + "%";
+      'width': percent + "%",
+      'background': color
     }
     return styles;
   }
+
 }

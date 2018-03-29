@@ -11,10 +11,7 @@ export class AppComponent {
   title = 'THANATOS';
   masterKegList: Keg[] = [
     new Keg('Giantess', 'Thanatos', 200, 6),
-    new Keg('Black Butte', 'Deschutes', 200, 7.4),
-    new Keg('Hefeweizen', 'Paulener', 200, 5.9),
     new Keg('Pliny the Elder', 'Russian River', 200, 8),
-    new Keg('Dad Guy Ale', 'Creepy Eagles', 200, 7.3),
     new Keg('Vortex', 'Fort George', 200, 5.5),
   ];
 
@@ -45,7 +42,9 @@ export class AppComponent {
   masterSellPint(childKeg: Keg) {
     for(var keg of this.masterKegList) {
       if (keg.name === childKeg.name) {
-        keg.pints -= 1;
+        if(keg.pints > 0){
+          keg.pints -= 1;
+        }
       }
     }
   }
@@ -53,7 +52,9 @@ export class AppComponent {
   masterSellGrowler(childKeg: Keg) {
     for(var keg of this.masterKegList) {
       if (keg.name === childKeg.name) {
-        keg.pints -= 2;
+        if(keg.pints > 0){
+          keg.pints -= 2;
+        }
       }
     }
   }
@@ -61,7 +62,9 @@ export class AppComponent {
   masterSellXlGrowler(childKeg: Keg) {
     for(var keg of this.masterKegList) {
       if (keg.name === childKeg.name) {
-        keg.pints -= 4;
+        if (keg.pints > 0){
+          keg.pints -= 4;
+        }
       }
     }
   }

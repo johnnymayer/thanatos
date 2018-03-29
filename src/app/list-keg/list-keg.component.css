@@ -1,7 +1,16 @@
-.styler {
+/* buttons */
+.button-shell {
+  width:100%;
+  text-align: center;
+}
+
+.buttons {
+  height: 30px;
+  width: 60px;
   display: inline-block;
 }
 
+/* progress bar */
 .progress {
   margin: 0 auto;
   width: 25rem;

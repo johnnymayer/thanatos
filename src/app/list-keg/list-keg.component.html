@@ -1,25 +1,40 @@
-<div class="card" style="text-align:center;" *ngFor="let keg of childKegList" (click)="showKeg(keg)">
-<!-- KEG LIST -->
-  <h2 style=" font-size:3rem;">
-    <span>{{keg.name}} # PINTS: {{keg.pints}}</span>
-    <br>
-    <button (click)='childSellPint(keg)'>SELL PINT</button>
-    <button (click)='childSellGrowler(keg)'>SELL GROWLER</button>
-    <button (click)='childSellXlGrowler(keg)'>SELL XL GROWLER</button>
-    <button (click)='childSellKegGrowler(keg)'>SELL KEG</button>
-  </h2>
-<!-- PROGRESS BAR -->
-  <div class="progress">
-    <div class="progress-bar" [ngStyle]="setWidth(keg.pints)"></div>
+<div class="row">
+
+  <div class="col">
+    <div class="card" style="text-align:center;" *ngFor="let keg of childKegList" (click)="showKeg(keg)">
+      <!-- KEG LIST -->
+      <h2 style=" font-size:3rem;">
+        <span>{{keg.name}}</span>
+        <p>Brand: {{keg.brand}}</p>
+        <p>Price: {{keg.price}}</p>
+        <p>ABV: {{keg.abv}}%</p>
+
+        <span style="font-size:1.5rem;"># PINTS: {{keg.pints}}</span>
+      </h2>
+      <div class="button-shell">
+        <button class="buttons" (click)='childSellPint(keg)'>pint</button>
+        <button class="buttons" (click)='childSellGrowler(keg)'>growler</button>
+        <button class="buttons" (click)='childSellXlGrowler(keg)'>xl</button>
+        <button class="buttons" (click)='childSellKegGrowler(keg)'>keg</button>
+      </div><br>
+
+      <!-- PROGRESS BAR -->
+      <div class="progress">
+        <div class="progress-bar" [ngStyle]="setWidth(keg.pints)"></div>
+      </div>
+    </div>
   </div>
+
+  <div class="col">
+    <div class="card" style="text-align:center;" *ngIf="selectedKeg">
+      <h1 class="card-title">{{selectedKeg.name}} Details</h1>
+      <h3>BRAND: {{selectedKeg.brand}}</h3>
+      <h3>PRICE: ${{selectedKeg.price}}</h3>
+      <h3>ABV: {{selectedKeg.abv}}%</h3>
+      <h3>PINTS LEFT: {{selectedKeg.pints}}</h3>
+      <button (click)="editButtonClicked(selectedKeg)">EDIT</button>
+    </div>
+  </div>
+
 </div>
 <!-- DETAILS -->
-<div class="card" style="text-align:center;" *ngIf="selectedKeg">
-  <h1 class="card-title">{{selectedKeg.name}} Details</h1>
-  <h3>BRAND: {{selectedKeg.brand}}</h3>
-  <h3>PRICE: ${{selectedKeg.price}}</h3>
-  <h3>ABV: {{selectedKeg.abv}}%</h3>
-  <h3>PINTS LEFT: {{selectedKeg.pints}}</h3>
-  <button (click)="editButtonClicked(selectedKeg)">EDIT</button>
-</div>
-<!-- [ngClass]="{'progress-bar':true}" [ngStyle]="{'width':setWidth(keg.pints)} -->
