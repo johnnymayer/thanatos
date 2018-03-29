@@ -50,4 +50,29 @@ export class AppComponent {
     }
   }
 
+  masterSellGrowler(childKeg: Keg) {
+    for(var keg of this.masterKegList) {
+      if (keg.name === childKeg.name) {
+        keg.pints -= 2;
+      }
+    }
+  }
+
+  masterSellXlGrowler(childKeg: Keg) {
+    for(var keg of this.masterKegList) {
+      if (keg.name === childKeg.name) {
+        keg.pints -= 4;
+      }
+    }
+  }
+
+  masterSellKegGrowler(childKeg: Keg) {
+    for(var keg of this.masterKegList) {
+      if (keg.name === childKeg.name) {
+        keg.pints -= keg.pints;
+      }
+    }
+  }
+
+
 }

@@ -26,6 +26,22 @@ export class ListKegComponent {
     this.sellPint.emit(keg);
   }
 
+  @Output() sellGrowler = new EventEmitter();
+  childSellGrowler(keg: Keg){
+    this.sellGrowler.emit(keg);
+  }
+
+  @Output() sellXlGrowler = new EventEmitter();
+  childSellXlGrowler(keg: Keg){
+    this.sellXlGrowler.emit(keg);
+  }
+
+  @Output() sellKegGrowler = new EventEmitter();
+  childSellKegGrowler(keg: Keg){
+    this.sellKegGrowler.emit(keg);
+  }
+
+
   setWidth(input) {
     let percent = Math.round((input / 124) * 100);
     let styles = {

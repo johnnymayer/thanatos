@@ -2,7 +2,11 @@
 <!-- KEG LIST -->
   <h2 style=" font-size:3rem;">
     <span>{{keg.name}} # PINTS: {{keg.pints}}</span>
+    <br>
     <button (click)='childSellPint(keg)'>SELL PINT</button>
+    <button (click)='childSellGrowler(keg)'>SELL GROWLER</button>
+    <button (click)='childSellXlGrowler(keg)'>SELL XL GROWLER</button>
+    <button (click)='childSellKegGrowler(keg)'>SELL KEG</button>
   </h2>
 <!-- PROGRESS BAR -->
   <div class="progress">
