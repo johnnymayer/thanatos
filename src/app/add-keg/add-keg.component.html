@@ -1,26 +1,23 @@
-<div class="col-lg-6">
-  <div class="card">
-    <div class="card-header">
-      <h1>New Keg</h1>
-    </div>
-
-    <div class="card-body">
-      <form id="#addKeg">
-      <label for="">BEER NAME:</label>
-      <input #newName type="text" name="name" placeholder="BEER NAME" value="{{name}}">
-      <br>
-      <label for="">BRAND NAME:</label>
-      <input #newBrand type="text" name="brand" placeholder="BRAND NAME" value=
-      "{{brand}}">
-      <br>
-      <label for="">PRICE:</label>
-      <input #newPrice type="number" name="price" placeholder="ENTER PRICE" value="{{price}}">
-      <br>
-      <label for="">ABV:</label>
-      <input #newAbv type="number" name="abv" placeholder="ENTER ABV" value="{{abv}}">
-      <br>
-      <button (click)="newKeg(newName.value, newBrand.value, newPrice.value, newAbv.value)" class="button">SAVE</button>
-      </form>
-    </div>
+<div class="card">
+  <div class="card-header">
+    <h1>New Keg</h1>
+  </div>
+  <div class="card-body">
+    <form id="#addKeg">
+    <label for="">BEER NAME:</label>
+    <input #newName type="text" name="name" placeholder="BEER NAME" value="{{name}}">
+    <br>
+    <label for="">BRAND NAME:</label>
+    <input #newBrand type="text" name="brand" placeholder="BRAND NAME" value=
+    "{{brand}}">
+    <br>
+    <label for="">PRICE:</label>
+    <input #newPrice type="number" name="price" placeholder="ENTER PRICE" value="{{price}}">
+    <br>
+    <label for="">ABV:</label>
+    <input #newAbv type="number" name="abv" placeholder="ENTER ABV" value="{{abv}}">
+    <br>
+    <button (click)="newKeg(newName.value, newBrand.value, newPrice.value, newAbv.value)" class="button">SAVE</button>
+    </form>
   </div>
 </div>

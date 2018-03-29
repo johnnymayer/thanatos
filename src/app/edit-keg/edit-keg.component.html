@@ -1,23 +1,18 @@
-<div class="row">
-<div class="col-lg-6">
-</div>
-  <div class="col-lg-6">
-    <div class="card" *ngIf="childKegToEdit" >
-      <form>
-      <label for="">BEER NAME:</label>
-      <input [(ngModel)]="childKegToEdit.name" type="text" name="name">
-      <br>
-      <label for="">BRAND NAME:</label>
-      <input type="text" name="brand" [(ngModel)]="childKegToEdit.brand">
-      <br>
-      <label for="">PRICE:</label>
-      <input type="number" name="price" [(ngModel)]="childKegToEdit.price">
-      <br>
-      <label for="">ABV:</label>
-      <input type="number" name="abv" [(ngModel)]="childKegToEdit.abv">
-      </form>
-      <button (click)="finishedEditing()" class="button">SAVE</button>
-      <button (click)="deleteThis()" class="button2">DELETE</button>
-    </div>
-  </div>
+
+<div class="card" *ngIf="childKegToEdit" >
+  <form>
+  <label for="">BEER NAME:</label>
+  <input [(ngModel)]="childKegToEdit.name" type="text" name="name">
+  <br>
+  <label for="">BRAND NAME:</label>
+  <input type="text" name="brand" [(ngModel)]="childKegToEdit.brand">
+  <br>
+  <label for="">PRICE:</label>
+  <input type="number" name="price" [(ngModel)]="childKegToEdit.price">
+  <br>
+  <label for="">ABV:</label>
+  <input type="number" name="abv" [(ngModel)]="childKegToEdit.abv">
+  </form>
+  <button (click)="finishedEditing()" class="button">SAVE</button>
+  <button (click)="deleteThis()" class="button">DELETE</button>
 </div>

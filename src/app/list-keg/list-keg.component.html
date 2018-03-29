@@ -1,19 +1,20 @@
-<div class="row">
-  <div class="col-md-6">
-    <div class="card" style="text-align:center;" *ngFor="let keg of childKegList" (click)="showKeg(keg)">
-      <h2 style=" font-size:3rem;">
-        <span >{{keg.name}}</span>
-      </h2>
-    </div>
+<div class="card" style="text-align:center;" *ngFor="let keg of childKegList" (click)="showKeg(keg)">
+<!-- KEG LIST -->
+  <h2 style=" font-size:3rem;">
+    <span>{{keg.name}} # PINTS: {{keg.pints}}</span>
+    <button (click)='childSellPint(keg)'>SELL PINT</button>
+  </h2>
+<!-- PROGRESS BAR -->
+  <div class="progress">
+    <div class="progress-bar" style="width:70%"></div>
   </div>
-  <div class="col-md-6">
-    <div class="card" style="text-align:center;" *ngIf="selectedKeg">
-      <h1>{{selectedKeg.name}} Details</h1>
-      <h3>BRAND: {{selectedKeg.brand}}</h3>
-      <h3>PRICE: ${{selectedKeg.price}}</h3>
-      <h3>ABV: {{selectedKeg.abv}}%</h3>
-      <h3>PINTS LEFT: {{selectedKeg.pints}}</h3>
-      <button (click)="editButtonClicked(selectedKeg)">EDIT</button>
-    </div>
-  </div>
-</div><!-- row -->
+</div>
+<!-- DETAILS -->
+<div class="card" style="text-align:center;" *ngIf="selectedKeg">
+  <h1 class="card-title">{{selectedKeg.name}} Details</h1>
+  <h3>BRAND: {{selectedKeg.brand}}</h3>
+  <h3>PRICE: ${{selectedKeg.price}}</h3>
+  <h3>ABV: {{selectedKeg.abv}}%</h3>
+  <h3>PINTS LEFT: {{selectedKeg.pints}}</h3>
+  <button (click)="editButtonClicked(selectedKeg)">EDIT</button>
+</div>

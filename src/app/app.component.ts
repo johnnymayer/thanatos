@@ -17,14 +17,12 @@ export class AppComponent {
     new Keg('Vortex', 'Fort George', 200, 5.5),
   ];
 
-  kegToEdit = null;
   want = null;
-
-
   addKeg() {
     this.want = 'true';
   };
 
+  kegToEdit = null;
   editKeg(keg) {
     this.kegToEdit = keg;
   };
@@ -41,6 +39,14 @@ export class AppComponent {
 
   addNewKegToMaster(newKeg) {
     this.masterKegList.push(newKeg);
+  }
+
+  masterSellPint(childKeg: Keg) {
+    for(var keg of this.masterKegList) {
+      if (keg.name === childKeg.name) {
+        keg.pints -= 1;
+      }
+    }
   }
 
 
