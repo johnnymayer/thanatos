@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+
 import { Keg } from './models/keg.model';
 
 @Component({
@@ -48,8 +49,5 @@ export class AppComponent {
       }
     }
   }
-
-
-
 
 }

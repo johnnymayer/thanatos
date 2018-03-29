@@ -23,10 +23,14 @@ export class ListKegComponent {
 
   @Output() sellPint = new EventEmitter();
   childSellPint(keg: Keg){
-    console.log("HERE is YoUr KeG!!!" + keg.pints);
     this.sellPint.emit(keg);
   }
 
-
-
+  setWidth(input) {
+    let percent = Math.round((input / 124) * 100);
+    let styles = {
+      'width': percent + "%";
+    }
+    return styles;
+  }
 }

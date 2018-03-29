@@ -6,7 +6,7 @@
   </h2>
 <!-- PROGRESS BAR -->
   <div class="progress">
-    <div class="progress-bar" style="width:70%"></div>
+    <div class="progress-bar" [ngStyle]="setWidth(keg.pints)"></div>
   </div>
 </div>
 <!-- DETAILS -->
@@ -18,3 +18,4 @@
   <h3>PINTS LEFT: {{selectedKeg.pints}}</h3>
   <button (click)="editButtonClicked(selectedKeg)">EDIT</button>
 </div>
+<!-- [ngClass]="{'progress-bar':true}" [ngStyle]="{'width':setWidth(keg.pints)} -->

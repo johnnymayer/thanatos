@@ -1,3 +1,8 @@
 .styler {
   display: inline-block;
 }
+
+.progress {
+  margin: 0 auto;
+  width: 25rem;
+}
