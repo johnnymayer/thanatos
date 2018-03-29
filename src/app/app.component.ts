@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Keg } from './models/keg.model';
 
 @Component({
@@ -18,6 +18,12 @@ export class AppComponent {
   ];
 
   kegToEdit = null;
+  wantToAddKeg = null; 
+
+
+  addKegClicked() {
+    this.addKeg = 'true';
+  };
 
   editKeg(keg) {
     this.kegToEdit = keg;
@@ -32,6 +38,7 @@ export class AppComponent {
     this.masterKegList.splice(index, 1);
     this.kegToEdit = null;
   };
+
 
 
 

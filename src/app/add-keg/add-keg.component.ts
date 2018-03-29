@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Keg } from '../models/keg.model';
+
 
 @Component({
   selector: 'app-add-keg',
   templateUrl: './add-keg.component.html',
   styleUrls: ['./add-keg.component.css']
 })
-export class AddKegComponent implements OnInit {
+export class AddKegComponent {
 
-  constructor() { }
+  @Input() childKegtoAdd: boolean; 
+  wantToAddKeg = null;
 
-  ngOnInit() {
-  }
+  addKeg() {
+    this.wantToAddKeg = true;
+  };
 
 }

@@ -15,7 +15,7 @@ export class EditKegComponent {
     this.clickedDone.emit();
   }
 
-  deleteKeg() {
+  deleteThis() {
     this.clickedDelete.emit();
   }
 }
