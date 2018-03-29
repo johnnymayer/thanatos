@@ -9,4 +9,8 @@
 
 <app-edit-keg [childKegToEdit]="kegToEdit" (clickedDone)="finishedEditing()" (clickedDelete) = "deleteKeg()"></app-edit-keg>
 
-<button (click)="addKegClicked()">ADD</button>
+<button (click)="addKeg()">ADD</button>
+
+<div *ngIf="want">
+  <app-add-keg></app-add-keg>
+</div>

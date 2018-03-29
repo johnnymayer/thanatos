@@ -18,11 +18,11 @@ export class AppComponent {
   ];
 
   kegToEdit = null;
-  wantToAddKeg = null; 
+  want = null;
 
 
-  addKegClicked() {
-    this.addKeg = 'true';
+  addKeg() {
+    this.want = 'true';
   };
 
   editKeg(keg) {
