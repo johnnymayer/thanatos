@@ -18,8 +18,9 @@
       <br>
       <label for="">ABV:</label>
       <input #newAbv type="number" name="abv" placeholder="ENTER ABV" value="{{abv}}">
+      <br>
+      <button (click)="newKeg(newName.value, newBrand.value, newPrice.value, newAbv.value)" class="button">SAVE</button>
       </form>
-      <!-- <button (click)="submitForm()"> -->
     </div>
   </div>
 </div>

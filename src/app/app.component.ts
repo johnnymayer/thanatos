@@ -39,6 +39,10 @@ export class AppComponent {
     this.kegToEdit = null;
   };
 
+  addNewKegToMaster(newKeg) {
+    this.masterKegList.push(newKeg);
+  }
+
 
 
 

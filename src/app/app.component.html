@@ -9,8 +9,10 @@
 
 <app-edit-keg [childKegToEdit]="kegToEdit" (clickedDone)="finishedEditing()" (clickedDelete) = "deleteKeg()"></app-edit-keg>
 
-<button (click)="addKeg()">ADD</button>
+<div style='text-align:center;'>
+  <button (click)="addKeg()">ADD</button>
+</div>
 
 <div *ngIf="want">
-  <app-add-keg></app-add-keg>
+  <app-add-keg (clickedAdd)="addNewKegToMaster($event)"></app-add-keg>
 </div>

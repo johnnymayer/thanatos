@@ -9,11 +9,14 @@ import { Keg } from '../models/keg.model';
 })
 export class AddKegComponent {
 
-  @Input() childKegtoAdd: boolean; 
+  @Input() childKegtoAdd: boolean;
+  @Output() clickedAdd = new EventEmitter();
   wantToAddKeg = null;
 
-  addKeg() {
-    this.wantToAddKeg = true;
-  };
+  newKeg(name:string, brand:string, price:number, abv:number) {
+    let newKeg: Keg = new Keg(name, brand, price, abv);
+    console.log(newKeg);
+    this.clickedAdd.emit(newKeg);
+  }
 
 }
