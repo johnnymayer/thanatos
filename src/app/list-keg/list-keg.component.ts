@@ -59,4 +59,22 @@ export class ListKegComponent {
     return styles;
   }
 
+  setAbvColor(input) {
+    let abvColor;
+    if(input >= 10) {
+      abvColor = '#d39353';
+    } else if(input <= 9 && input >= 7) {
+      abvColor = '#754946';
+    } else if(input <= 6 && input >= 3) {
+      abvColor = '#d2ab8e';
+    } else {
+      abvColor = '#d2ab8e';
+    }
+    let styles = {
+      'color': abvColor;
+    }
+
+    return styles;
+  }
+
 }

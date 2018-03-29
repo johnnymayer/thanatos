@@ -1,13 +1,14 @@
-<div class="row">
 
-  <div class="col">
+
+  <div class="beers">
+
     <div class="card" style="text-align:center;" *ngFor="let keg of childKegList" (click)="showKeg(keg)">
       <!-- KEG LIST -->
       <h2 style=" font-size:3rem;">
         <span>{{keg.name}}</span>
         <p>Brand: {{keg.brand}}</p>
         <p>Price: {{keg.price}}</p>
-        <p>ABV: {{keg.abv}}%</p>
+        <p [ngStyle]="setAbvColor(keg.abv)">ABV: {{keg.abv}}%</p>
 
         <span style="font-size:1.5rem;"># PINTS: {{keg.pints}}</span>
       </h2>
@@ -22,19 +23,24 @@
       <div class="progress">
         <div class="progress-bar" [ngStyle]="setWidth(keg.pints)"></div>
       </div>
+      <div *ngIf="keg.pints === 0">
+        <img src="http://lewamack.com/Facebook/Pics/Laughs/Laughing-Skull-laughingskull.gif" style="width:15%;height:15%;">
+        <img src="http://lewamack.com/Facebook/Pics/Laughs/Laughing-Skull-laughingskull.gif" style="width:15%;height:15%;">
+        <img src="http://lewamack.com/Facebook/Pics/Laughs/Laughing-Skull-laughingskull.gif" style="width:15%;height:15%;">
+      </div>
     </div>
   </div>
-
-  <div class="col">
-    <div class="card" style="text-align:center;" *ngIf="selectedKeg">
-      <h1 class="card-title">{{selectedKeg.name}} Details</h1>
-      <h3>BRAND: {{selectedKeg.brand}}</h3>
-      <h3>PRICE: ${{selectedKeg.price}}</h3>
-      <h3>ABV: {{selectedKeg.abv}}%</h3>
-      <h3>PINTS LEFT: {{selectedKeg.pints}}</h3>
-      <button (click)="editButtonClicked(selectedKeg)">EDIT</button>
-    </div>
+  <div class="card" style="text-align:center;" *ngIf="selectedKeg">
+    <h1 class="card-title">{{selectedKeg.name}} Details</h1>
+    <h3>BRAND: {{selectedKeg.brand}}</h3>
+    <h3>PRICE: ${{selectedKeg.price}}</h3>
+    <h3>ABV: {{selectedKeg.abv}}%</h3>
+    <h3>PINTS LEFT: {{selectedKeg.pints}}</h3>
+    <button (click)="editButtonClicked(selectedKeg)">EDIT</button>
   </div>
 
-</div>
+
+
+
+
 <!-- DETAILS -->
