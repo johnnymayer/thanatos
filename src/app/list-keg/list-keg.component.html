@@ -29,14 +29,15 @@
         <img src="http://lewamack.com/Facebook/Pics/Laughs/Laughing-Skull-laughingskull.gif" style="width:15%;height:15%;">
       </div>
     </div>
-  </div>
-  <div class="card" style="text-align:center;" *ngIf="selectedKeg">
-    <h1 class="card-title">{{selectedKeg.name}} Details</h1>
-    <h3>BRAND: {{selectedKeg.brand}}</h3>
-    <h3>PRICE: ${{selectedKeg.price}}</h3>
-    <h3>ABV: {{selectedKeg.abv}}%</h3>
-    <h3>PINTS LEFT: {{selectedKeg.pints}}</h3>
-    <button (click)="editButtonClicked(selectedKeg)">EDIT</button>
+    <br>
+    <div class="card" id="details" *ngIf="selectedKeg">
+      <h1 class="card-title">{{selectedKeg.name}} Details</h1>
+      <h3>BRAND: {{selectedKeg.brand}}</h3>
+      <h3>PRICE: ${{selectedKeg.price}}</h3>
+      <h3>ABV: {{selectedKeg.abv}}%</h3>
+      <h3>PINTS LEFT: {{selectedKeg.pints}}</h3>
+      <button (click)="editButtonClicked(selectedKeg)">EDIT</button>
+    </div>
   </div>
 
 

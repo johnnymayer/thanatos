@@ -24,5 +24,11 @@
 }
 
 .card {
-display: inline-block;
+  display: inline-block;
+}
+
+#details {
+  text-align: center;
+  width: 25%;
+  height: 25%;
 }
